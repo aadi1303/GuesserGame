@@ -32,7 +32,7 @@ class Umpire
 	int numFromGuesser;
 	int numFromPlayer1;
 	int numFromPlayer2;
-	int numFromplayer3;
+	int numFromPlayer3;
 
 	void collectNumFromGuesser()
 	{
@@ -47,21 +47,54 @@ class Umpire
 		Player p3 = new Player();
 		 numFromPlayer1=p1.guessingNumber();
 		 numFromPlayer2=p2.guessingNumber();
-		 numFromplayer3=p3.guessingNumber();
+		 numFromPlayer3=p3.guessingNumber();
 	}
 	void compare()
 	{
 		if(numFromGuesser==numFromPlayer1)
 		{
-			System.out.println("Player1 won the game");
+			if(numFromGuesser==numFromPlayer2)
+			{
+				System.out.println("Player1 and Player2 won the game");
+			}
+			else if(numFromGuesser==numFromPlayer3)
+			{
+				System.out.println("Player1 and Player3 won the game");
+			}
+			else
+			{
+				System.out.println("Player1  won the game");
+			}	
 		}
 		else if(numFromGuesser==numFromPlayer2)
 		{
-			System.out.println("Player2 won the game");
+			if(numFromGuesser==numFromPlayer1)
+			{
+				System.out.println("Player1 and Player2 won the game");
+			}
+			else if(numFromGuesser==numFromPlayer3)
+			{
+				System.out.println("Player2 and Player3 won the game");
+			}
+			else
+			{
+				System.out.println("Player2  won the game");
+			}
 		}
-		else if(numFromGuesser==numFromplayer3)
+		else if(numFromGuesser==numFromPlayer3)
 		{	
-			System.out.println("Player3 won the game");
+			if(numFromGuesser==numFromPlayer1)
+			{
+				System.out.println("Player1 and Player3 won the game");
+			}
+			else if(numFromGuesser==numFromPlayer2)
+			{
+				System.out.println("Player2 and Player3 won the game");
+			}
+			else
+			{
+				System.out.println("Player3  won the game");
+			}
 		}
 		else
 		{
@@ -81,6 +114,7 @@ public class GuesserGame
 		u.compare();
 	}
 }
+
 
 
 
